@@ -2,7 +2,7 @@ import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 import { AppProps } from 'next/app';
-import { ChakraProvider } from '@chakra-ui/react';
+import { Box, ChakraProvider } from '@chakra-ui/react';
 import { QueryClientProvider } from 'react-query';
 import { queryClient } from '@/lib/query-client';
 import { Meta } from '@/components/Meta';
@@ -16,7 +16,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <StarredMoviesProvider>
         <QueryClientProvider client={queryClient}>
           <Meta />
-          <Component {...pageProps} />
+          <Box as="main" w="full" h="full" px={6} py={4}>
+            <Component {...pageProps} />
+          </Box>
           <Global
             styles={css`
               html {

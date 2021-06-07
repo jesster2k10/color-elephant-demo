@@ -1,8 +1,8 @@
-import { MovieFilterBar } from '@/components/MovieFilterBar';
 import { MovieList } from '@/components/MovieList';
 import { Movie, Sort } from '@/interfaces';
 import { API } from '@/lib/api';
-import { Box, Heading } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
+import { MovieListHeader } from '@/components/MovieListHeader';
 import { useState } from 'react';
 import { useQuery } from 'react-query';
 import Link from 'next/link';
@@ -26,20 +26,8 @@ export default function NoInfiniteScroll({
   const sortedMovies = sortMovies(movies, sort);
 
   return (
-    <Box p={4}>
-      <Box
-        d="flex"
-        flexDir={['column', 'row']}
-        mb={4}
-        alignItems="center"
-        justifyContent="space-between"
-        w="full"
-      >
-        <Heading mb={[2, 0]} as="h1">
-          Top 500 Movies
-        </Heading>
-        <MovieFilterBar sort={sort} onSort={setSort} />
-      </Box>
+    <>
+      <MovieListHeader sort={sort} onSort={setSort} />
 
       <Link href="/" passHref>
         <Box as="a" textDecor="underline" mb={4} d="block">
@@ -48,7 +36,7 @@ export default function NoInfiniteScroll({
       </Link>
 
       <MovieList movies={sortedMovies} />
-    </Box>
+    </>
   );
 }
 
