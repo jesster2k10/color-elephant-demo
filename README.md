@@ -15,7 +15,7 @@ View specification [here](https://docs.google.com/document/d/1I7vZ_1FQ74_tuJY-Wk
 
 1. `npm install` or `yarn`;
 2. `yarn dev`;
-3. 
+   
 To view the project open `http://localhost:3000`.
 
 ---
