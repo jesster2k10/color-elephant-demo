@@ -28,7 +28,7 @@
     "react/react-in-jsx-scope": "off",
     "react/require-default-props": "off",
     "no-useless-constructor": "off",
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.ts", "**/*.spec.ts", "jest.config.js", "jest.setup.js"]}],
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.ts", "**/*.test.tsx", "**/*.spec.ts", "jest.config.js", "jest.setup.js"]}],
     "import/extensions": [
       "error",
       "ignorePackages",
