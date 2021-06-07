@@ -6,3 +6,5 @@ export interface ApiResponse<T> {
 }
 
 export type ApiResponseArray<T> = ApiResponse<T[]>;
+
+export type Sort = 'DESC' | 'ASC';

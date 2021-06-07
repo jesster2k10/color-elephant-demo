@@ -1,5 +1,5 @@
 import fetchMock from 'fetch-mock';
-import { API } from './api';
+import { API } from '../api';
 
 const api = new API('https://jsonplaceholder.typicode.com');
 

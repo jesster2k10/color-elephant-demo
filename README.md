@@ -11,6 +11,7 @@ View specification [here](https://docs.google.com/document/d/1I7vZ_1FQ74_tuJY-Wk
 - Testing with Jest & React Testing Library
 - Based on https://github.com/jpedroschmitz/typescript-nextjs-starter
 
+## 💼 Dependencies
 ## 🚀 Getting started
 
 1. `npm install` or `yarn`;

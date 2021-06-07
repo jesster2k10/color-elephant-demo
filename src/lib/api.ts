@@ -4,7 +4,7 @@ export type HTTPMethod = 'GET';
 
 export class API {
   public constructor(
-    public basePath: string,
+    public basePath?: string,
     public params?: Record<string, any>,
     public headers?: Record<string, any>,
   ) {}
@@ -30,7 +30,7 @@ export class API {
     };
 
     const urlPath = path.charAt(0) === '/' ? path.substr(1) : path;
-    let url = `${this.basePath}/${urlPath}`;
+    let url = this.basePath ? `${this.basePath}/${urlPath}` : path;
 
     if (config.method === 'GET') {
       delete config.body;
@@ -60,8 +60,11 @@ export class API {
     return this.request(url, 'GET', params);
   }
 
-  public async getArray<T>(url: string): Promise<ApiResponse<T[]>> {
-    return this.get<T[]>(url);
+  public async getArray<T>(
+    url: string,
+    params?: Record<string, any>,
+  ): Promise<ApiResponse<T[]>> {
+    return this.get<T[]>(url, params);
   }
 }
 
